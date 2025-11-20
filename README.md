@@ -74,11 +74,10 @@ weights
     └── sat_644.pth
 ```
 
-4. Download pretrained weights of MA-HMR from [Google Drive](https://drive.google.com/drive/folders/1CaQOaQZ94ot91D_kqhvasfRb-utpfKmM?usp=drive_link) and put them to `weights/ma_hmr`. You can only prepare mahmr_stage3.bin for inference or evaluation.
-* **mahmr_stage1.bin**: trained on AGORA, BEDLAM and CameraHMR's version of 4D-humans pGTs (supervision on 2D kps) for 5 epochs with denoising strategy and without camera branch.
-* **mahmr_stage2.bin**: trained on AGORA, BEDLAM and CameraHMR's version of 4D-humans pGTs (supervision on 2D kps) for 5 epochs with camera branch and fov loss.
-* **mahmr_stage3.bin**: trained on AGORA, BEDLAM and **DTO-Humans** for 5 epochs with camera branch and full loss.
- for inference and evaluation from [Google drive](https://drive.google.com/drive/folders/1L09zt5lQ2RVK2MS2DwKODpdTs9K6CQPC?usp=sharing)
+4. Download pretrained weights of MA-HMR from [Google Drive](https://drive.google.com/drive/folders/1CaQOaQZ94ot91D_kqhvasfRb-utpfKmM?usp=drive_link) | [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/99755d6e4b7a463fb673/) and put them to `weights/ma_hmr`. You can only prepare mahmr_stage3.bin for inference or evaluation.
+* **mahmr_stage1.bin**: Start from SAT-HMR stage1, continue training on AGORA, BEDLAM and CameraHMR's version of 4D-humans pGTs (supervision on 2D kps) for 5 epochs with denoising strategy.
+* **mahmr_stage2.bin**: Start from mahmr_stage1, continue training on AGORA, BEDLAM and CameraHMR's version of 4D-humans pGTs (supervision on 2D kps) for 5 epochs with camera branch and fov loss.
+* **mahmr_stage3.bin**: Start from mahmr_stage2, continue training on AGORA, BEDLAM and **DTO-Humans** for 5 epochs with camera branch and full loss.
 
 ```
 weights
