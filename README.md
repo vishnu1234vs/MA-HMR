@@ -166,7 +166,7 @@ accelerate launch main.py --mode infer --cfg demo
 
 <h4> Training with Multiple GPUs</h4>
 
-We use [🤗 Accelerate](https://huggingface.co/docs/accelerate/index) to launch our distributed configuration, first you may need to configure [🤗 Accelerate](https://huggingface.co/docs/accelerate/index) for how the current system is setup for distributed process. To do so run the following command and answer the questions prompted to you:
+We use [Accelerate](https://huggingface.co/docs/accelerate/index) to launch our distributed configuration, first you may need to configure [Accelerate](https://huggingface.co/docs/accelerate/index) for how the current system is setup for distributed process. To do so run the following command and answer the questions prompted to you:
 
 ```bash
 accelerate config
