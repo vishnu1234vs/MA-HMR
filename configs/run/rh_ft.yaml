@@ -1,0 +1,52 @@
+seed: 42
+model: fov_kid
+
+pretrain: True
+pretrain_path: 'weights/ma_hmr/mahmr_stage3.bin'
+resume: False
+
+num_epochs: 10
+save_and_eval_epoch: 1
+least_eval_epoch: 0
+sat_gt_epoch: 0
+# lr
+lr: 1.0e-5
+lr_encoder_names: ["encoder"]
+lr_encoder: 1.0e-5
+# optimizer AdamW
+optimizer: 'adamw'
+weight_decay: 0.0001
+num_warmup_steps: 0
+lr_scheduler: 'cosine'
+aux_loss: True
+
+use_extra_j: True
+losses: ['confs','poses','betas','boxes','j3ds','j2ds','depths','depths_re','scale_map','fov']
+weight_dict: {'confs':2.,'poses':2.,'betas':2.,'boxes':0., 'giou':0., 'j3ds':0.,'j2ds':10.,'depths':0., 'depths_re': 0.5, 'map_confs': 0., 'map_scales': 0., 'fov':0.}
+detach_j3ds: False
+
+# matcher
+set_cost_conf: 1
+set_cost_bbox: 1
+set_cost_giou: 1
+set_cost_kpts: 20
+
+# train aug
+aug_cfg:
+  rot_range: [-15, 15]
+  scale_range: [1., 2.]
+  flip_ratio: 0.5
+
+train_datasets_used: ['rh']
+train_datasets_split: ['train']
+train_datasets_ds_rate: [1]
+train_batch_size: 8
+train_num_workers: 8
+
+eval_datasets_used: ['rh']
+eval_datasets_split: ['test']
+eval_vis_num: 0
+conf_thresh: [0.3]
+eval_batch_size: 16
+eval_num_workers: 8
+distributed_eval: True

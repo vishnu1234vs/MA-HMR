@@ -1,0 +1,1 @@
+from .smpl_models import SMPL_Layer, SMPL_Kid_Layer

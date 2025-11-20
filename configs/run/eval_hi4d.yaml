@@ -1,0 +1,12 @@
+model: fov_kid
+
+pretrain: True
+pretrain_path: 'outputs/ckpts/train_chmr_fov_opt_mloss/epoch_2_step_40193/pytorch_model.bin'
+
+eval_datasets_used: ['hi4d']
+eval_datasets_split: ['test']
+eval_vis_num: 20
+conf_thresh: [0.3]
+eval_batch_size: 16
+eval_num_workers: 8
+distributed_eval: True

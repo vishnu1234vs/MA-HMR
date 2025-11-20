@@ -1,0 +1,13 @@
+model: fov_kid
+
+pretrain: True
+pretrain_path: 'weights/ma_hmr/mahmr_stage3.bin'
+
+use_extra_j: True
+eval_datasets_used: ['rh']
+eval_datasets_split: ['test']
+eval_vis_num: 183
+conf_thresh: [0.3]
+eval_batch_size: 12
+eval_num_workers: 8
+distributed_eval: True
