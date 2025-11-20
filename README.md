@@ -90,20 +90,36 @@ weights
 
 ## 📦 Data Preparation
 
-Please follow [this guidance](https://github.com/ChiSu001/SAT-HMR/blob/main/docs/data_preparation.md) to prepare AGORA, BEDLAM, 3DPW. Placing all datasets in `data/`. The `*_CHMR_SMPL.npz` files are the reorgnized [CameraHMR's](https://camerahmr.is.tue.mpg.de/) annotation of 4D-humans dataset. The `*_CHMR_SMPL_OPT.npz` files are our [DTO-Humans](https://github.com/gouba2333/DTO-Humans.git) annotations.
+Please follow [this guidance](https://github.com/ChiSu001/SAT-HMR/blob/main/docs/data_preparation.md) to prepare AGORA, BEDLAM and 3DPW. Please refer to scripts in `datasets/preprocess/` to preprocess HI4D, MuPoTS and [CameraHMR's](https://camerahmr.is.tue.mpg.de/) annotation of 4D-humans dataset. Download [DTO-Humans](https://github.com/gouba2333/DTO-Humans.git) annotations from [Google Drive](https://drive.google.com/drive/folders/1ddc43P6iYIctAvmuravIxbxZm3F2uB41?usp=drive_link) | [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/539173c2952b40f5a422/). Placing all datasets in `data/`.
  You can skip this step if you are not going to train or evaluate MA-HMR.
 
 ```
 data/
 ├── 3dpw/
-├── agora/
+│   ├── imageFiles/
+│   ├── annots_smpl_test_genders.npz
+│   └── annots_smpl_train_genders.npz
+├── agora
+│   ├── smpl_neutral_annots
+│   │   ├── annots_smpl_train_fit.npz
+│   │   └── annots_smpl_validation.npz
+│   ├── test/
+│   ├── train/
+│   └── validation/
 ├── aic/
 │   ├── images/
 │   ├── aic-release.npz
 │   ├── AIC_CHMR_SMPL.npz
 │   └── AIC_CHMR_SMPL_OPT.npz
-├── bedlam/
+├── bedlam
+│   ├── train/
+│   ├── validation/
+│   ├── bedlam_smpl_train_1fps.npz
+│   ├── bedlam_smpl_train_6fps.npz
+│   └── bedlam_smpl_validation_6fps.npz
 ├── cmu_panoptic/
+│   ├── images/
+│   └── annots_test.npz
 ├── coco2014/
 │   ├── images/
 │   │   └── train2014/
@@ -111,6 +127,9 @@ data/
 │   ├── COCO_CHMR_SMPL.npz
 │   └── COCO_CHMR_SMPL_OPT.npz
 ├── hi4d/
+│   ├── pair**/
+│   ├── hi4d_smpl_test.npz
+│   └── hi4d_smpl_train.npz
 ├── insta/
 │   ├── images/
 │   │   └── insta-train/
@@ -124,7 +143,12 @@ data/
 │   ├── MPII_CHMR_SMPL.npz
 │   └── MPII_CHMR_SMPL_OPT.npz
 ├── mupots/
+│   ├── MultiPersonTestSet/
+│   └── mupots_annots.npz
 └── RelativeHuman/
+    ├── images/
+    ├── test_annots.npz
+    └── train_annots.npz
 ```
 
 
