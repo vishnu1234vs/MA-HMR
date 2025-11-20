@@ -151,7 +151,7 @@ You can specify your own inference configuration by modifing `configs/run/demo.y
 <h4> Inference with Multiple GPUs</h4>
 
 You can also try distributed inference on multiple GPUs if your input folder contains a large number of images. 
-Since we use [🤗 Accelerate](https://huggingface.co/docs/accelerate/index) to launch our distributed configuration, first you may need to configure [🤗 Accelerate](https://huggingface.co/docs/accelerate/index) for how the current system is setup for distributed process. To do so run the following command and answer the questions prompted to you:
+Since we use [Accelerate](https://huggingface.co/docs/accelerate/index) to launch our distributed configuration, first you may need to configure [Accelerate](https://huggingface.co/docs/accelerate/index) for how the current system is setup for distributed process. To do so run the following command and answer the questions prompted to you:
 
 ```bash
 accelerate config
