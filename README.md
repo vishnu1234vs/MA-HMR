@@ -215,6 +215,10 @@ accelerate config
 accelerate launch main.py --mode eval --cfg ${cfg_name}
 ```
 
+## 📜 License
+
+The code and weights are released under the [**Creative Commons Attribution-NonCommercial 4.0 International License**](https://creativecommons.org/licenses/by-nc/4.0/). This means they are available for **non-commercial academic research purposes only**. Please see the [LICENSE](LICENSE) file for the full license text.
+
 ## 📜 Citation
 If you find our work useful, please consider citing our paper:
 
